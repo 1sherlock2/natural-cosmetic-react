@@ -1,0 +1,23 @@
+.header {
+	position: fixed;
+	background: whitesmoke;
+	display: grid;
+	grid-area: header;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 75px;
+}
+.logo img {
+	margin: 10px auto auto 50px;
+	border-radius: 10%;
+	width: 30%;
+}
+.nameCompany {
+	text-align: center;
+	margin: 10px auto auto auto;
+	font-family: "Comic Sans MS";
+	font-size: 35px;
+}
+.search {
+	margin: 10px auto auto auto;
+	text-align: center;
+}

@@ -1,0 +1,26 @@
+.app {
+	display: grid;
+	grid-template-areas: "header" "unheader" "navbar" "content" "footer";
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+}
+
+.header {
+	grid-area: header;
+}
+
+.unheader {
+	grid-area: unheader;
+}
+
+.navbar {
+	grid-area: navbar;
+}
+
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+}

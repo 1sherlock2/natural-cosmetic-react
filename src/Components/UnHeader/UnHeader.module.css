@@ -1,0 +1,19 @@
+.unheader {
+	margin-top: 80px;
+	grid-area: unheader ;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 40px;
+}
+.phone {
+	margin: auto auto auto 20px;
+	font-size: 15px;
+	text-align: left;
+	color: #333;
+}
+.city {
+	margin: auto 20px auto auto;
+	font-size: 15px;
+	text-align: right;
+	color: #333;
+}

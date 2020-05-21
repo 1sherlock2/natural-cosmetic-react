@@ -1,0 +1,32 @@
+.navbar {
+	display: grid;
+	grid-area: navbar;
+	justify-content: center;
+	background-color: #f5f5f5;
+}
+
+ul {
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: 1fr;
+	vertical-align: middle;
+	height: 20px;
+}
+
+li {
+	height: 100%;
+	list-style: none;
+	text-align: center;
+	margin-left: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+li:hover {
+	background: #e3dada;
+	transition: all 0.1s ease 0.1s;
+	border: 1px solid #aba7a7;
+}
