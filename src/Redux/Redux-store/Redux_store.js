@@ -12,6 +12,7 @@ import skinCareReducer from "../Reducers/SkinCareReducer";
 import accessoriesReducer from "../Reducers/AccessoriesReducer";
 import kidsReducer from "../Reducers/KidsReducer";
 import giftReducer from "../Reducers/GiftReducer";
+import authReducer from "../Reducers/AuthReducer";
 
 
 let reducerPack = combineReducers({
@@ -29,6 +30,7 @@ let reducerPack = combineReducers({
 	giftData: giftReducer,
 	// brendsData: brendsReducer,
 	// footerData: footerReducer,
+	authData: authReducer,
 })
 
 let store = createStore(reducerPack);
