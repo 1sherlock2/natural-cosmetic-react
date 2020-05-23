@@ -1,5 +1,5 @@
 import React from "react";
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import headerReducer from "../Reducers/HeaderReducer";
 import unHeaderReducer from "../Reducers/UnHeaderReducer";
 import navReducer from "../Reducers/NavbarReducer";
@@ -13,7 +13,7 @@ import accessoriesReducer from "../Reducers/AccessoriesReducer";
 import kidsReducer from "../Reducers/KidsReducer";
 import giftReducer from "../Reducers/GiftReducer";
 import authReducer from "../Reducers/AuthReducer";
-
+import thunkMiddleWare from "redux-thunk"
 
 let reducerPack = combineReducers({
 	headerData: headerReducer,
@@ -33,6 +33,6 @@ let reducerPack = combineReducers({
 	authData: authReducer,
 })
 
-let store = createStore(reducerPack);
+let store = createStore(reducerPack,  applyMiddleware(thunkMiddleWare));
 
 export default store;

@@ -1,0 +1,47 @@
+.auth {
+	display: grid;
+
+	grid-template-areas: "register register" "email email" "password password" "button button";
+	padding: 150px;
+	background: rgba(224, 217, 217, 0.56);
+}
+
+.auth_register {
+	grid-area: register;
+	text-align: center;
+	margin-top: 2.5%;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 0;
+	font-weight: 400;
+}
+
+.auth_register h1 {
+	font-weight: 300;
+	margin-top: -100px;
+}
+
+.auth_email {
+	margin: 50px auto;
+	grid-area: email;
+}
+
+.auth_email input {
+
+}
+
+.auth_password {
+	margin: 10px auto;
+	grid-area: password;
+}
+
+.auth_button {
+	grid-template-columns: repeat(auto-fill,1fr);
+	margin: 0 auto;
+	text-align: center;
+	grid-area: button;
+}
+.auth_button button {
+	margin: auto 30px auto 30px;
+	text-align: left;
+}

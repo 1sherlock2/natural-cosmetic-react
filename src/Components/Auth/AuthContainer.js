@@ -2,14 +2,21 @@ import React from "react";
 import {compose} from "redux";
 import {AuthRedirectComponent} from "../../HOC/AuthRedirectComponent";
 import {connect} from "react-redux";
+import Auth from "./Auth";
+import {setUserThunk} from "../../Redux/Reducers/AuthReducer";
 
 
 class AuthContainer extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+
+	componentDidMount() {
+		this.props.setUserThunk(this.props.userId, this.props.email, this.props.password)
+	}
+
 	render() {
-		return <Auth />
+		return <Auth isAuth={this.props.isAuth}/>
 	}
 }
 
@@ -18,4 +25,4 @@ let mapStateToProps = (state) => {
 		isAuth: state.authData.isAuth,
 	}
 }
-export default compose(connect(mapStateToProps, {}),AuthRedirectComponent)(AuthContainer)
+export default connect(mapStateToProps, {setUserThunk})(AuthContainer)

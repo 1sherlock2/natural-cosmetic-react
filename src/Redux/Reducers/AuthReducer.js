@@ -7,7 +7,7 @@ let initialState = {
 	isAuth: false,
 }
 
-let authReducer = (state=initialState, action) => {
+let authReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_USER_DATA:
 			return {
@@ -15,9 +15,17 @@ let authReducer = (state=initialState, action) => {
 				...action.data,
 				isAuth: true,
 			}
+		default:
+				return state
 	}
 }
 
-export const setUserData = (userId,email,password) => ({type: SET_USER_DATA, data: {userId,email,password}})
+export const setUserData = (userId, email, password) => ({type: SET_USER_DATA, data: {userId, email, password}})
+
+export const setUserThunk = (userId, email, password) => {
+	return (dispatch) => {
+		dispatch(setUserData(userId, email, password))
+	}
+}
 
 export default authReducer;

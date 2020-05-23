@@ -1,3 +1,7 @@
+.container {
+	display: grid;
+}
+
 .app {
 	display: grid;
 	grid-template-areas: "header" "unheader" "navbar" "content" "footer";

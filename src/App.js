@@ -5,7 +5,7 @@ import s from "./App.module.css"
 import UnHeaderContainer from "./Components/UnHeader/UnHeaderContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 import StocksContainer from "./Components/Stocks/StocksContainer";
-import {Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
 import KoreaContainer from "./Components/Korea/KoreaContainer";
 import PerfumeryContainer from "./Components/Perfumery/PerfumeryContainer";
 import MakeUpContainer from "./Components/MakeUp/MakeUpContainer";
@@ -14,36 +14,38 @@ import MenContainer from "./Components/Men/MenContainer";
 import AccessoriesContainer from "./Components/Accessories/AccessoriesContainer";
 import KidsContainer from "./Components/Kids/KidsContainer";
 import GiftContainer from "./Components/GIft/GiftContainer";
+import AuthContainer from "./Components/Auth/AuthContainer";
+import {connect} from "react-redux";
+import {useRoutes} from "./Routes/Route";
 
-const App = () =>  {
-  return (
-    <div className={s.app}>
-      <div className={s.header}>
-        <HeadersContainer />
-      </div>
-      <div className={s.unheader}>
-        <UnHeaderContainer />
-      </div>
-      <div className={s.navbar}>
-        <NavbarContainer />
-      </div>
-      <div className={s.content}>
-        <Route path={'/stocks'} render={ () => <StocksContainer />} />
-        <Route path={`/korea`} render={ () => <KoreaContainer />} />
-        <Route path={`/perfumery`} render={ () => <PerfumeryContainer />} />
-        <Route path={`/makeup`} render={ () => <MakeUpContainer />} />
-        <Route path={`/skincare`} render={ () => <SkinCareContainer />} />
-        <Route path={`/men`} render={ () => <MenContainer />} />
-        <Route path={`/accessories`} render={ () => <AccessoriesContainer />} />
-        <Route path={`/kids`} render={ () => <KidsContainer />} />
-          <Route path={`/gift`} render={ () => <GiftContainer />} />
-        {/*  <Route path={`/brends`} render={ () => <BrendsContainer />} />*/}
-      </div>
-      <div className={s.footer}>
-        {/*<Footer />*/}
-      </div>
-    </div>
-  );
+
+const App = () => {
+	const routes = useRoutes(true);
+	return (
+		<div className={s.container}>
+			{routes}
+		</div>
+	)
 }
+export default App
 
-export default App;
+
+// class App extends React.Component {
+// 	render() {
+// 	const routes = useRoutes(this.props.authData.isAuth)
+// 		return (
+// 			<div className={s.app}>
+// 				{routes}
+// 			</div>
+// 		)
+// 	}
+// }
+//
+// let mapStateToProps = (state) => {
+// 	return {
+// 		...state,
+// 		isAuth: state.authData.isAuth,
+// 	}
+// }
+//
+// export default connect(mapStateToProps, {})(App);

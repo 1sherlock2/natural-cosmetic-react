@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 export const AuthRedirectComponent = (Component) => {
 	let mapStateToPropsFromRedirect = (state) => {
 		return {
+			...state,
 			isAuth: state.authData.isAuth,
 		}
 	}
@@ -15,7 +16,7 @@ export const AuthRedirectComponent = (Component) => {
 			super(props);
 		}
 		render() {
-			if (!this.props.isAuth)	return <Redirect to={'/login'} />
+			// if (!this.props.isAuth)	return <Redirect to={'/login'} />
 			return <Component {...this.props} />
 		}
 	}
